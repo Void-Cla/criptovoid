@@ -1,4 +1,4 @@
-/* Estilos globais */
+/* Estilos Globais */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -8,122 +8,38 @@ body {
     overflow-x: hidden;
 }
 
-/* Estilo do cabeçalho */
+/* Cabeçalho */
 header {
-    background-color: #220044; /* Cor de fundo do cabeçalho */
-    background-image: url('img/vazio.jpg'); /* Imagem de fundo */
-    background-size: cover; /* Ajuste do tamanho da imagem de fundo */
-    background-position: center; /* Posição da imagem de fundo */
-    padding: 1% 0; /* Espaçamento interno (10% acima e abaixo, 0 nos lados) */
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.6); /* Sombra */
-    text-align: center; /* Alinhamento do texto */
-    position: relative; /* Posicionamento */
-    color: #ffffff; /* Cor do texto */
-    height: 30vh; /* Ajuste da altura do cabeçalho */
-}
-
-/* Título do cabeçalho */
-header h1 {
-    margin: 0; /* Margens */
-    font-size: 3.5vw; /* Tamanho da fonte */
-    position: relative; /* Ajuste da posição do título */
-    top: 10%; /* Coloca o título no meio verticalmente */
-    transform: translateY(-50%); /* Centraliza o título verticalmente */
-    transform-origin: center; /* Transformação */
-}
-
-/* Estilo dos botões */
-.nav-link {
-    display: block; /* Torna os botões elementos de bloco */
-    margin: 100px auto; /* Margem para centralizar os botões horizontalmente */
-    
-}
-
-/* Estilos principais */
-main {
-    padding: 5%;
-}
-
-section.content {
-    margin-bottom: 3vw;
-}
-
-.content {
-    display: none;
-}
-
-#inicio.content {
-    display: block;
-}
-
-.chart-container {
-    height: 100%; 
-    width: 100%; 
-}
-
-.chart {
+    background-color: #220044;
+    background-image: url('img/vazio.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 1% 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
     position: relative;
-    width: 100%;
-    height: 100%;
+    color: #ffffff;
+    height: 30vh;
 }
 
-#crypto-chart-card {
-    display: block;
-    margin: auto;
-    width: 50%; 
-    height: 20%; 
-    max-height: 600px; /
+header h1 {
+    margin: 0;
+    font-size: 3.5vw;
+    position: relative;
+    top: 1%;
+    transform: translateY(-1%);
+    transform-origin: center;
 }
 
-#crypto-chart {
-    width: 100%;
-    height: 100%;
-}
-
-.card {
-    background-color: #1a1a1a;
-    border: 2px solid #6600cc;
-    border-radius: 2vw;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-    padding: 2%;
-    margin-bottom: 2vw;
-}
-
-.card h2 {
-    margin-top: 0;
-    color: #fff;
-    font-size: 2vw;
-}
-
-.card h3 {
-    margin-top: 0;
-    color: #fff;
-    font-size: 1.5vw;
-}
-
-.card p {
-    margin-bottom: 2vw;
-    line-height: 1.6;
-}
-
-.card ol {
-    margin-bottom: 2vw;
-    padding-left: 2%;
-}
-
-.card + .card {
-    margin-top: 2vw;
-}
-
-/* Estilos de navegação */
+/* Navegação */
 nav {
     text-align: center;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding: 10%;
+    margin: -1%;
 }
 
 nav ul li {
@@ -161,7 +77,24 @@ a.register-link:hover {
     background-color: #7B68EE;
 }
 
-/* Caixa de preços */
+/* Seções Principais */
+main {
+    padding: 5%;
+}
+
+section.content {
+    margin-bottom: 3vw;
+}
+
+.content {
+    display: none;
+}
+
+#inicio.content {
+    display: block;
+}
+
+/* Preços das Criptomoedas */
 .price-box {
     display: flex;
     justify-content: space-between;
@@ -181,13 +114,8 @@ a.register-link:hover {
     cursor: pointer;
 }
 
-.crypto-info {
-    margin-bottom: 10px;
-}
-
 .crypto-icon {
     width: 50px;
-    height: center;
 }
 
 .crypto-price h3 {
@@ -203,7 +131,127 @@ a.register-link:hover {
 }
 
 
-/* Media Queries para responsividade */
+
+/* Cartões de Informações */
+.card {
+    background-color: #1a1a1a;
+    border: 2px solid #6600cc;
+    border-radius: 2vw;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    padding: 2%;
+    margin-bottom: 2vw;
+}
+
+.card h2, .card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.card h2 {
+    font-size: 2vw;
+}
+
+.card h3 {
+    font-size: 1.5vw;
+}
+
+.card p, .card ol {
+    margin-bottom: 2vw;
+    line-height: 1.6;
+}
+
+.card ol {
+    padding-left: 2%;
+}
+
+.card + .card {
+    margin-top: 2vw;
+}
+
+#crypto-chart-card {
+    display: block;
+    margin: auto;
+    width: 48%; /* Reduzindo o tamanho para a margem ocupar 1% */
+    height: 10%; /* Reduzindo o tamanho para a margem ocupar 1% */
+    max-height: 600px;
+    margin-top: 1%; /* Distância de 1% até a borda do .card */
+    margin-bottom: 1%; /* Distância de 1% até a borda do .card */
+    background-color: #000000; /* Fundo preto */
+    position: relative; /* Necessário para o posicionamento absoluto do gráfico */
+}
+
+#crypto-chart {
+    position: absolute; /* Posicionamento absoluto */
+    top: 5%; /* Distância de 5% do topo */
+    left: 5%; /* Distância de 5% da esquerda */
+    width: 80%; /* Largura de 90% do .card-gf */
+    height: 70%; /* Altura de 90% do .card-gf */
+}
+
+
+#chart {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+
+/* Rodapé */
+#footer {
+    position: relative;
+    background-color: #450285d2;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Botões de Mídia Social */
+.tiktok-button, .youtube-button {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.tiktok-button {
+    right: 60px;
+    background-color: #000;
+}
+
+.tiktok-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.tiktok-button:hover {
+    transform: scale(1.1);
+}
+
+.youtube-button {
+    right: 10px;
+    background-color: #FF0000;
+}
+
+.youtube-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.youtube-button:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
 @media (max-width: 768px) {
     header {
         padding: 5%;
@@ -262,62 +310,4 @@ a.register-link:hover {
     100% {
         background-color: #6600cc;
     }
-}
-
-
-
-/* Estilos do rodapé */
-#footer {
-    position: relative;
-    background-color: #450285d2;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    visibility: hidden; /* Esconder o rodapé inicialmente */
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear; /* Transição suave */
-}
-
-/* Estilos comuns para os botões */
-.tiktok-button, .youtube-button {
-    position: absolute;
-    bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-/* Estilos específicos para o botão do TikTok */
-.tiktok-button {
-    right: 60px;
-    background-color: #000;
-}
-
-.tiktok-button img {
-    width: 24px;
-    height: 24px;
-}
-
-.tiktok-button:hover {
-    transform: scale(1.1);
-}
-
-/* Estilos específicos para o botão do YouTube */
-.youtube-button {
-    right: 10px;
-    background-color: #FF0000;
-}
-
-.youtube-button img {
-    width: 24px;
-    height: 24px;
-}
-
-.youtube-button:hover {
-    transform: scale(1.1);
 }

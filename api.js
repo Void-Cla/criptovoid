@@ -1,25 +1,31 @@
 // Função para atualizar os preços
-function updatePrices() {
+async function updatePrices() {
     const currencies = ['BTC', 'LTC', 'ETH'];
 
-    currencies.forEach(currency => {
-        fetch(`https://rest.coinapi.io/v1/exchangerate/${currency}/USD`, {
-            headers: {
-                'X-CoinAPI-Key': 'A87977FA-9FC3-4A03-8BC1-68EF634735AB'
+    try {
+        for (const currency of currencies) {
+            const response = await fetch(`https://rest.coinapi.io/v1/exchangerate/${currency}/USD`, {
+                headers: {
+                    'X-CoinAPI-Key': 'A87977FA-9FC3-4A03-8BC1-68EF634735AB'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro ao buscar dados de preço');
             }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const priceUSD = data.rate.toFixed(2);
-            const priceBRL = (priceUSD * 5.3).toFixed(2); // Conversão USD para BRL (considerando 1 USD = 5.3 BRL)
+
+            const data = await response.json();
+            const priceUSD = data.rate ? data.rate.toFixed(2) : 'N/A';
+            const priceBRL = priceUSD !== 'N/A' ? (priceUSD * 5.3).toFixed(2) : 'N/A';
             const priceElementUSD = document.getElementById(`${currency.toLowerCase()}-price-usd`);
             const priceElementBRL = document.getElementById(`${currency.toLowerCase()}-price-brl`);
 
             priceElementUSD.textContent = `$ ${priceUSD}`;
             priceElementBRL.textContent = `R$ ${priceBRL}`;
-        })
-        .catch(error => console.error('Erro:', error));
-    });
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,29 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function displayChart(symbol) {
     const chartContainer = document.getElementById('chart-container');
-    chartContainer.style.display = 'block'; 
-    
+    chartContainer.style.display = 'block';
+
     const data = await fetchMarketData(symbol);
     renderChart(data);
 }
 
-async function fetchMarketData(symbol) {
-    const url = `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD/history?period_id=1DAY&time_start=2022-01-01T00:00:00`;
-    
-    const response = await fetch(url, {
-        headers: {
-            'X-CoinAPI-Key': 'A87977FA-9FC3-4A03-8BC1-68EF634735AB'
-        }
-    });
-    
-    if (!response.ok) {
-        console.error('Erro ao buscar dados de mercado');
-        return;
-    }
-    
-    const data = await response.json();
-    return data;
-}
 
 document.addEventListener('DOMContentLoaded', function () {
     fetchCryptoPrices();
@@ -73,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const btc = data.data.find(crypto => crypto.symbol === 'BTC');
                 const ltc = data.data.find(crypto => crypto.symbol === 'LTC');
                 const eth = data.data.find(crypto => crypto.symbol === 'ETH');
-    
+
                 document.getElementById('btc-price-usd').textContent = parseFloat(btc.priceUsd).toFixed(2);
                 document.getElementById('ltc-price-usd').textContent = parseFloat(ltc.priceUsd).toFixed(2);
                 document.getElementById('eth-price-usd').textContent = parseFloat(eth.priceUsd).toFixed(2);
@@ -89,10 +78,30 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => console.error('Erro ao buscar preços das criptomoedas:', error));
     }
-    
+
     setInterval(fetchCryptoPrices, 3000); // Atualiza os preços a cada 3 segundos
-
-
 });
 
+async function fetchMarketData(symbol) {
+    const url = `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD/history?period_id=1DAY&time_start=2022-01-01T00:00:00`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'X-CoinAPI-Key': 'A87977FA-9FC3-4A03-8BC1-68EF634735AB'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao buscar dados de mercado');
+        }
+
+        const data = await response.json();
+        console.log('Dados do mercado:', data); // Verifica os dados retornados
+        return data;
+    } catch (error) {
+        console.error('Erro ao buscar dados do mercado:', error);
+        return null; // Retorna null em caso de erro
+    }
+}
 
