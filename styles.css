@@ -132,6 +132,14 @@ section.content {
 
 
 
+
+
+
+
+
+
+
+
 /* Cartões de Informações */
 .card {
     background-color: #1a1a1a;
@@ -140,7 +148,73 @@ section.content {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
     padding: 2%;
     margin-bottom: 2vw;
+    position: relative; /* Necessário para o posicionamento absoluto do pseudo-elemento */
+    animation: LinhasRGB 3s linear infinite;
 }
+.card::before {
+    content: '';
+    width: 3px; /* Metade do tamanho original */
+    height: 3px; /* Metade do tamanho original */
+    background-color: #8c00ff;
+    border-radius: 40%;
+    position: absolute;
+    animation: movePoint 10s linear infinite;
+    box-shadow: 0 0 5px rgb(221, 209, 236); /* Adicionando sombra */
+}
+
+@keyframes movePoint {
+    0% {
+        top: 0;
+        left: 0;
+        transform: translate(0, -50%);
+    }
+    25% {
+        top: 0;
+        left: 100%;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        top: 100%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        top: 0;
+        left: 0;
+        transform: translate(0, -50%);
+    }
+}
+
+
+@keyframes LinhasRGB {
+    0% {
+      border-color: #3b0147;
+    }
+    25% {
+      border-color: #7b18d8;
+    }
+    50% {
+      border-color: #6b0d88;
+    }
+    75% {
+      border-color: #520585;
+    }
+    100% {
+      border-color: #3b0147;
+    }
+    
+  }
+
+
+
+
+
+
 
 .card h2, .card h3 {
     margin-top: 0;
@@ -171,28 +245,33 @@ section.content {
 #crypto-chart-card {
     display: block;
     margin: auto;
-    width: 48%; /* Reduzindo o tamanho para a margem ocupar 1% */
-    height: 10%; /* Reduzindo o tamanho para a margem ocupar 1% */
+    width: 50%;
+    height: 10%;
     max-height: 600px;
-    margin-top: 1%; /* Distância de 1% até a borda do .card */
-    margin-bottom: 1%; /* Distância de 1% até a borda do .card */
-    background-color: #000000; /* Fundo preto */
-    position: relative; /* Necessário para o posicionamento absoluto do gráfico */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #000000;
+    position: relative;
+
 }
 
 #crypto-chart {
-    position: absolute; /* Posicionamento absoluto */
-    top: 5%; /* Distância de 5% do topo */
-    left: 5%; /* Distância de 5% da esquerda */
-    width: 80%; /* Largura de 90% do .card-gf */
-    height: 70%; /* Altura de 90% do .card-gf */
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 80%;
 }
-
 
 #chart {
     width: 100%;
     height: 500px;
 }
+
+
+
+
+
 
 
 
