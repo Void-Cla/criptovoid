@@ -31,6 +31,11 @@ header h1 {
     transform-origin: center;
 }
 
+
+
+
+
+
 /* Navegação */
 nav {
     text-align: center;
@@ -49,7 +54,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #f8f5fc;
     padding: 5% 5%;
     border-radius: 5px;
     animation: colorChange 2s infinite;
@@ -57,9 +62,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #7B68EE;
+    background-color: #56039b;
     transform: scale(1.1);
 }
+
+
+
+
+
 
 /* Link de registro */
 a.register-link {
@@ -72,10 +82,11 @@ a.register-link {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-
 a.register-link:hover {
     background-color: #7B68EE;
 }
+
+
 
 /* Seções Principais */
 main {
@@ -94,13 +105,19 @@ section.content {
     display: block;
 }
 
+
+
+
+
+
+
+
 /* Preços das Criptomoedas */
 .price-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 .crypto-price {
     background-color: #170124;
     border: 2px solid;
@@ -113,27 +130,19 @@ section.content {
     overflow: hidden;
     cursor: pointer;
 }
-
 .crypto-icon {
     width: 50px;
 }
-
 .crypto-price h3 {
     margin: 0;
     font-size: 20px;
     color: #f7f2f2;
 }
-
 .crypto-price p {
     margin: 0;
     font-size: 30px;
     color: #ffffff;
 }
-
-
-
-
-
 
 
 
@@ -161,7 +170,6 @@ section.content {
     animation: movePoint 10s linear infinite;
     box-shadow: 0 0 5px rgb(221, 209, 236); /* Adicionando sombra */
 }
-
 @keyframes movePoint {
     0% {
         top: 0;
@@ -189,59 +197,43 @@ section.content {
         transform: translate(0, -50%);
     }
 }
-
-
 @keyframes LinhasRGB {
     0% {
-      border-color: #3b0147;
+        border-color: #3b0147;
     }
     25% {
-      border-color: #7b18d8;
+        border-color: #7b18d8;
     }
     50% {
-      border-color: #6b0d88;
+        border-color: #6b0d88;
     }
     75% {
-      border-color: #520585;
+        border-color: #520585;
     }
     100% {
-      border-color: #3b0147;
+        border-color: #3b0147;
     }
-    
-  }
-
-
-
-
-
-
-
+}   
 .card h2, .card h3 {
     margin-top: 0;
     color: #fff;
 }
-
 .card h2 {
     font-size: 2vw;
 }
-
 .card h3 {
     font-size: 1.5vw;
 }
-
 .card p, .card ol {
     margin-bottom: 2vw;
     line-height: 1.6;
 }
-
 .card ol {
     padding-left: 2%;
 }
-
 .card + .card {
     margin-top: 2vw;
 }
-
 #crypto-chart-card {
     display: block;
     margin: auto;
@@ -252,9 +244,7 @@ section.content {
     margin-bottom: 1%;
     background-color: #000000;
     position: relative;
-
 }
-
 #crypto-chart {
     position: absolute;
     top: 10%;
@@ -262,15 +252,10 @@ section.content {
     width: 90%;
     height: 80%;
 }
-
 #chart {
     width: 100%;
     height: 500px;
 }
-
-
-
-
 
 
 
@@ -287,6 +272,7 @@ section.content {
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }
+
 
 /* Botões de Mídia Social */
 .tiktok-button, .youtube-button {
@@ -329,6 +315,10 @@ section.content {
 .youtube-button:hover {
     transform: scale(1.1);
 }
+
+
+
+
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
@@ -374,19 +364,12 @@ section.content {
     }
 
     .crypto-price {
-        width: 23%;
+        width:    23%;
     }
+    
+    
+
 }
 
-/* Animações */
-@keyframes colorChange {
-    0% {
-        background-color: #6600cc;
-    }
-    75% {
-        background-color: #0000ff;
-    }
-    100% {
-        background-color: #6600cc;
-    }
-}
+
+
