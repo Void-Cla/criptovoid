@@ -160,6 +160,7 @@ section.content {
     position: relative; /* Necessário para o posicionamento absoluto do pseudo-elemento */
     animation: LinhasRGB 3s linear infinite;
 }
+
 .card::before {
     content: '';
     width: 3px; /* Metade do tamanho original */
@@ -170,6 +171,31 @@ section.content {
     animation: movePoint 10s linear infinite;
     box-shadow: 0 0 5px rgb(221, 209, 236); /* Adicionando sombra */
 }
+
+.smallcard {
+    background-color: #1a1a1a;
+    border: 0.2vw solid #6600cc; /* Um quarto do tamanho original */
+    border-radius: 0.2vw; /* Um quarto do tamanho original */
+    box-shadow: 1 2px 5px rgba(0, 0, 0, 0.8); /* Um quarto do tamanho original */
+    padding: 3%; /* Um quarto do tamanho original */
+    margin-bottom: 1vw; /* Um quarto do tamanho original */
+    width: 43%; /* Para permitir 2 cards por linha com espaçamento */
+    position: relative; /* Necessário para o posicionamento absoluto do pseudo-elemento */
+    animation: LinhasRGB 3s linear infinite;
+    display: inline-block; /* Para alinhar os cards lado a lado */
+}
+
+.smallcard::before {
+    content: '';
+    width: 3px; /* Um quarto do tamanho original */
+    height: 3px; /* Um quarto do tamanho original */
+    background-color: #8c00ff;
+    border-radius: 60%;
+    position: absolute;
+    animation: movePoint 10s linear infinite;
+    box-shadow: 4 4 4px rgb(221, 209, 236); /* Um quarto do tamanho original */
+}
+
 @keyframes movePoint {
     0% {
         top: 0;
@@ -234,6 +260,8 @@ section.content {
 .card + .card {
     margin-top: 2vw;
 }
+
+
 #crypto-chart-card {
     display: block;
     margin: auto;
