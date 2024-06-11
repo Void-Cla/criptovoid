@@ -30,13 +30,13 @@ async function fetchCryptoPrices() {
 async function fetchHistoricalData() {
     const cryptocurrencies = ['BTC', 'LTC', 'ETH'];
     const currentDate = new Date().toISOString().split('T')[0];
-    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
 
     for (const crypto of cryptocurrencies) {
         try {
-            const response = await fetch(`https://rest.coinapi.io/v1/ohlcv/${crypto}/USD/history?period_id=1DAY&time_start=${thirtyDaysAgo}&time_end=${currentDate}&limit=30`, {
+            const response = await fetch(`https://api.coinapi.io/v1/ohlcv/${crypto}_USD/history?period_id=1H&time_start=${twentyFourHoursAgo}&time_end=${currentDate}&limit=24`, {
                 headers: {
-                    'X-CoinAPI-Key': 'A87977FA-9FC3-4A03-8BC1-68EF634735AB' // Substitua pela sua própria chave de API
+                    'X-CoinAPI-Key': 'D46C0C08-761B-4116-9B68-85AAB1810102' 
                 }
             });
             const data = await response.json();
@@ -60,7 +60,10 @@ function renderChart(prices) {
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: Array.from({ length: 7 }, (_, i) => new Date(Date.now() - (7 - i) * 24 * 60 * 60 * 1000).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })),
+            labels: Array.from({ length: 24 }, (_, i) => {
+                const date = new Date(Date.now() - (24 - i) * 60 * 60 * 1000);
+                return date.toLocaleString('en-US', { hour: 'numeric', hour12: false });
+            }),
             datasets: cryptocurrencies.map(crypto => ({
                 label: `${crypto} Price`,
                 data: prices[crypto],
@@ -82,8 +85,6 @@ function renderChart(prices) {
                 yAxes: [{
                     ticks: {
                         fontColor: '#ffffff',
-                        min: Math.min(...Object.values(prices).map(price => Math.min(...price))), // Valor mínimo entre as três moedas
-                        max: Math.max(...Object.values(prices).map(price => Math.max(...price))), // Valor máximo entre as três moedas
                         callback: function(value, index, values) {
                             return '$' + value;
                         }
@@ -102,9 +103,22 @@ function renderChart(prices) {
             }
         }
     });
+
+    // Adiciona o valor máximo e mínimo ao gráfico
+    const legend = document.getElementById('legend');
+    cryptocurrencies.forEach(crypto => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            ${crypto}:
+            <div class="price-values">
+                <span class="max-price">${Math.max(...prices[crypto])}</span>
+                <span class="min-price">${Math.min(...prices[crypto])}</span>
+            </div>
+        `;
+        legend.appendChild(listItem);
+    });
 }
 
 function randomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16); // Gerar uma cor hexadecimal aleatória
 }
-
