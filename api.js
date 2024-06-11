@@ -1,56 +1,110 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Atualizar os preços em USD
-    updatePrices();
-
-    // Atualizar os preços a cada 3 segundos
-    setInterval(updatePrices, 3000);
+    fetchCryptoPrices();
+    fetchHistoricalData();
 });
 
-// Função para atualizar os preços
-async function updatePrices() {
-    const cryptocurrencies = ['BTC', 'LTC', 'ETH'];
-
+async function fetchCryptoPrices() {
     try {
-        for (const crypto of cryptocurrencies) {
-            const response = await fetch(`https://rest.coinapi.io/v1/exchangerate/${crypto}/USD`, {
-                headers: {
-                    'X-CoinAPI-Key': 'A87977FA-9FC3-4A03-8BC1-68EF634735AB'
-                }
-            });
+        const response = await fetch('https://api.coincap.io/v2/assets');
+        const data = await response.json();
+        const btc = data.data.find(crypto => crypto.symbol === 'BTC');
+        const ltc = data.data.find(crypto => crypto.symbol === 'LTC');
+        const eth = data.data.find(crypto => crypto.symbol === 'ETH');
 
-            if (!response.ok) {
-                throw new Error('Erro ao buscar dados de preço');
-            }
+        document.getElementById('btc-price-usd').textContent = parseFloat(btc.priceUsd).toFixed(2);
+        document.getElementById('ltc-price-usd').textContent = parseFloat(ltc.priceUsd).toFixed(2);
+        document.getElementById('eth-price-usd').textContent = parseFloat(eth.priceUsd).toFixed(2);
 
-            const data = await response.json();
-            const priceUSD = data.rate ? data.rate.toFixed(2) : 'N/A';
-            const priceElementUSD = document.getElementById(`${crypto.toLowerCase()}-price-usd`);
+        const prices = {
+            BTC: btc.priceUsd,
+            LTC: ltc.priceUsd,
+            ETH: eth.priceUsd
+        };
 
-            priceElementUSD.textContent = `$ ${priceUSD}`;
-        }
+        renderChart(prices);
     } catch (error) {
-        console.error('Erro:', error);
+        console.error('Erro ao buscar preços das criptomoedas:', error);
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    fetchCryptoPrices();
-    function fetchCryptoPrices() {
-        fetch('https://api.coincap.io/v2/assets')
-            .then(response => response.json())
-            .then(data => {
-                const btc = data.data.find(crypto => crypto.symbol === 'BTC');
-                const ltc = data.data.find(crypto => crypto.symbol === 'LTC');
-                const eth = data.data.find(crypto => crypto.symbol === 'ETH');
+async function fetchHistoricalData() {
+    const cryptocurrencies = ['BTC', 'LTC', 'ETH'];
+    const currentDate = new Date().toISOString().split('T')[0];
+    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
-                document.getElementById('btc-price-usd').textContent = parseFloat(btc.priceUsd).toFixed(2);
-                document.getElementById('ltc-price-usd').textContent = parseFloat(ltc.priceUsd).toFixed(2);
-                document.getElementById('eth-price-usd').textContent = parseFloat(eth.priceUsd).toFixed(2);
-            })
-            .catch(error => console.error('Erro ao buscar preços das criptomoedas:', error));
+    for (const crypto of cryptocurrencies) {
+        try {
+            const response = await fetch(`https://rest.coinapi.io/v1/ohlcv/${crypto}/USD/history?period_id=1DAY&time_start=${thirtyDaysAgo}&time_end=${currentDate}&limit=30`, {
+                headers: {
+                    'X-CoinAPI-Key': 'A87977FA-9FC3-4A03-8BC1-68EF634735AB' // Substitua pela sua própria chave de API
+                }
+            });
+            const data = await response.json();
+
+            if (data.length > 0) {
+                const prices = data.map(entry => entry.price_close.toFixed(2));
+                renderChart({ [crypto]: prices });
+            } else {
+                console.error(`Erro ao buscar histórico de preços de ${crypto}: Dados não encontrados`);
+            }
+        } catch (error) {
+            console.error(`Erro ao buscar histórico de preços de ${crypto}:`, error);
+        }
     }
+}
 
-    setInterval(fetchCryptoPrices, 3000); // Atualiza os preços a cada 3 segundos
-});
+function renderChart(prices) {
+    const cryptocurrencies = Object.keys(prices);
 
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: Array.from({ length: 7 }, (_, i) => new Date(Date.now() - (7 - i) * 24 * 60 * 60 * 1000).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })),
+            datasets: cryptocurrencies.map(crypto => ({
+                label: `${crypto} Price`,
+                data: prices[crypto],
+                backgroundColor: 'transparent',
+                borderColor: randomColor(), // Gerar uma cor aleatória para cada criptomoeda
+                borderWidth: 2
+            }))
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Comparação de Preços das Criptomoedas',
+                fontColor: '#ffffff'
+            },
+            scales: {
+                xAxes: [{
+                    display: false // Oculta o eixo X
+                }],
+                yAxes: [{
+                    ticks: {
+                        fontColor: '#ffffff',
+                        min: Math.min(...Object.values(prices).map(price => Math.min(...price))), // Valor mínimo entre as três moedas
+                        max: Math.max(...Object.values(prices).map(price => Math.max(...price))), // Valor máximo entre as três moedas
+                        callback: function(value, index, values) {
+                            return '$' + value;
+                        }
+                    }
+                }]
+            },
+            legend: {
+                labels: {
+                    fontColor: '#ffffff'
+                }
+            },
+            elements: {
+                point: {
+                    radius: 0
+                }
+            }
+        }
+    });
+}
+
+function randomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16); // Gerar uma cor hexadecimal aleatória
+}
 

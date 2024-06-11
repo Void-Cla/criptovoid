@@ -6,7 +6,8 @@
     <title>CriptoVoid</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/icon.png" type="image/png">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 
 </head>
 <body>
@@ -46,7 +47,15 @@
                     <p>$ <span id="eth-price-usd">Carregando...</span></p>
                     
                 </div>
-            </div>
+
+                <div class="cardgf" id="grafic">
+                    <h3>Gráfico de Preços</h3>  
+                    <div id="crypto-chart-container">
+                        <canvas id="myChart" width="800" height="350"></canvas>
+                    </div>
+                </div>
+                
+    </div>
                         
             
         </section>
