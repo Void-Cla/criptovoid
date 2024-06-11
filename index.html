@@ -6,12 +6,11 @@
     <title>CriptoVoid</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/icon.png" type="image/png">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 <body>
-    <header>
+    <!--<header>
         <h1>ＣｒｉｐｔｏＶｏｉｄ</h1>
         <nav>
             <ul>
@@ -21,13 +20,29 @@
                 <li><a href="#script" class="nav-link">Script</a></li>
             </ul>
         </nav>
+    </header>-->
+    <header class="header">
+        <div class="fundo-header">
+            <h1 class="titulo">ＣｒｉｐｔｏＶｏｉｄ</h1>
+        </div>
+        <div class="espaco"></div>
     </header>
+    <nav>
+         <div class="fundo-button">
+            <div class="button">
+                <a href="#inicio" class="nav-link"><div class="button-edit"  id="button-inicio">Inicio</div></a>
+                <a href="#mineradoras" class="nav-link"><div class="button-edit"  id="button-mineradoras">Mineradoras</div></a>
+                <a href="#bancos" class="nav-link"> <div class="button-edit"  id="button-bancos">Bancos</div></a>
+                <a href="#script" class="nav-link"> <div class="button-edit"  id="button-script">Script</div></a>
+            </div>
+         </div>
+    </nav>
     
     <main>
         <section id="inicio" class="content">
-            <h2>Bem-vindo à CriptoVoid</h2>
-            <p>Descubra o Universo das Criptomoedas com a CriptoVoid. Na CriptoVoid, nossa missão é simplificar o mundo das criptomoedas para todos, desde iniciantes até investidores experientes. Entendemos que o universo das criptomoedas pode parecer um espaço vasto e desconhecido, e é por isso que estamos aqui para guiá-lo através de cada passo dessa jornada emocionante.</p>
-        
+            <div class="card"><h2 class="content-edit">Bem-vindo à CriptoVoid</h2>
+                <p class="content-edit">Descubra o Universo das Criptomoedas com a CriptoVoid. Na CriptoVoid, nossa missão é simplificar o mundo das criptomoedas para todos, desde iniciantes até investidores experientes. Entendemos que o universo das criptomoedas pode parecer um espaço vasto e desconhecido, e é por isso que estamos aqui para guiá-lo através de cada passo dessa jornada emocionante.</p>
+            </div>
             <div class="price-box">
                 <div class="crypto-price" id="btc" data-crypto="BTC">
                     <img src="img/btc.png" alt="Ícone do Bitcoin (BTC)" class="crypto-icon">
@@ -47,17 +62,7 @@
                     <p>$ <span id="eth-price-usd">Carregando...</span></p>
                     
                 </div>
-
-                <div class="cardgf" id="grafic">
-                    <h3>Gráfico de Preços</h3>  
-                   
-                    <div id="crypto-chart-container">
-                       <!--   <ul id="legend"></ul>     Resolver a logica para passar os valores max.min do dia-->
-                        <canvas id="myChart" width="800" height="350"></canvas>           
-                    </div>
-                </div>
-                
-    </div>
+            </div>
                         
             
         </section>
@@ -65,9 +70,9 @@
         
         <section id="mineradoras" class="content">
             <div class="card">
-                <h2>Mineradoras de Criptomoedas</h2>
+                <h2 class="content-edit">Mineradoras de Criptomoedas</h2>
                 
-                <!-- Cartão do FreeBitco.in -->
+                 Cartão do FreeBitco.in
                 <div class="smallcard">
                     <h3>FreeBitco.in</h3>
                     <p>Ganhe bitcoins gratuitos através do FreeBitco.in, uma plataforma popular que oferece a oportunidade de ganhar bitcoins gratuitos através de várias atividades, como faucet, jogos e loterias.</p>
@@ -109,16 +114,18 @@
 
                 <!-- Cartão do Unmineable -->
                 <div class="smallcard">
-                    <h3>Unmineable</h3>
-                    <p>Use o Unmineable para minerar diversas criptomoedas de forma simples e eficiente.</p>
-                    <p>Para começar a minerar, siga estes passos:</p>
-                    <ol>
-                        <li>Baixe o programa do Unmineable clicando no botão abaixo.</li>
-                        <li>Após instalar o programa, adicione sua carteira Tron (TRX).</li>
-                        <li>Use o código "qcj7-j7kw" para se conectar à pool de mineração.</li>
-                    </ol>
-                    <a href="https://unmineable.com/?ref=qcj7-j7kw" target="_blank" class="register-link">Cadastrar em Unmineable</a>
-                </div>
+                    <div class="content-edit">
+                        <h3>Unmineable</h3>
+                        <p>Use o Unmineable para minerar diversas criptomoedas de forma simples e eficiente.</p>
+                        <p>Para começar a minerar, siga estes passos:</p>
+                        <ol>
+                            <li>Baixe o programa do Unmineable clicando no botão abaixo.</li>
+                            <li>Após instalar o programa, adicione sua carteira Tron (TRX).</li>
+                            <li>Use o código "qcj7-j7kw" para se conectar à pool de mineração.</li>
+                        </ol>
+                        <a href="https://unmineable.com/?ref=qcj7-j7kw" target="_blank" class="register-link">Cadastrar em Unmineable</a>
+                    </div>
+                    </div>
                 
             </div>
         </section>
@@ -129,30 +136,33 @@
                 
                 <!-- Cartão do FaucetPay -->
                 <div class="smallcard">
-                    <h3>FaucetPay</h3>
-                    <p>Utilize o FaucetPay como sua carteira de criptomoedas. O FaucetPay é uma plataforma de micropagamentos em criptomoedas, que permite armazenar, enviar e receber diferentes tipos de moedas digitais.</p>
-                    <p>Para começar a utilizar o FaucetPay, siga estes passos:</p>
-                    <ol>
-                        <li>Cadastre-se no FaucetPay clicando no botão abaixo.</li>
-                        <li>Complete o processo de registro e verificação da sua conta.</li>
-                        <li>Depois de criar sua conta, você pode começar a receber pagamentos e realizar transações em criptomoedas.</li>
-                    </ol>
-                    <a href="https://faucetpay.io/?r=1163015" target="_blank" class="register-link">Registrar-se no FaucetPay</a>
+                    <div class="content-edit">
+                        <h3>FaucetPay</h3>
+                        <p>Utilize o FaucetPay como sua carteira de criptomoedas. O FaucetPay é uma plataforma de micropagamentos em criptomoedas, que permite armazenar, enviar e receber diferentes tipos de moedas digitais.</p>
+                        <p>Para começar a utilizar o FaucetPay, siga estes passos:</p>
+                        <ol>
+                            <li>Cadastre-se no FaucetPay clicando no botão abaixo.</li>
+                            <li>Complete o processo de registro e verificação da sua conta.</li>
+                            <li>Depois de criar sua conta, você pode começar a receber pagamentos e realizar transações em criptomoedas.</li>
+                        </ol>
+                        <a href="https://faucetpay.io/?r=1163015" target="_blank" class="register-link">Registrar-se no FaucetPay</a>
+                    </div>
                 </div>
                 
                 <!-- Cartão do Mercado Bitcoin -->
                 <div class="smallcard">
-                    <h3>Mercado Bitcoin</h3>
-                    <p>Utilize o Mercado Bitcoin como sua plataforma de gerenciamento de criptomoedas. O Mercado Bitcoin oferece uma interface amigável para armazenar, enviar e receber diversas moedas digitais.</p>
-                    <p>Para começar a utilizar o Mercado Bitcoin, siga estes passos:</p>
-                    <ol>
-                        <li>Cadastre-se no Mercado Bitcoin clicando no botão abaixo.</li>
-                        <li>Complete o processo de registro e verificação da sua conta.</li>
-                        <li>Depois de criar sua conta, você pode começar a receber pagamentos e realizar transações em criptomoedas.</li>
-                    </ol>
-                    <a href="https://conta.mercadobitcoin.com.br/cadastro?mgm_token=f21092a305fb3af45259e8d7e648b2c15ea7272d863f6cb19bbd67ffdcc151ee&utm_campaign=mgm&utm_source=link-copy&utm_medium=web" target="_blank" class="register-link">Cadastrar em MB</a>
-                </div>
-        
+                   <div class="content-edit">   
+                        <h3>Mercado Bitcoin</h3>
+                            <p>Utilize o Mercado Bitcoin como sua plataforma de gerenciamento de criptomoedas. O Mercado Bitcoin oferece uma interface amigável para armazenar, enviar e receber diversas moedas digitais.</p>
+                            <p>Para começar a utilizar o Mercado Bitcoin, siga estes passos:</p>
+                            <ol>
+                                <li>Cadastre-se no Mercado Bitcoin clicando no botão abaixo.</li>
+                                <li>Complete o processo de registro e verificação da sua conta.</li>
+                                <li>Depois de criar sua conta, você pode começar a receber pagamentos e realizar transações em criptomoedas.</li>
+                            </ol>
+                            <a href="https://conta.mercadobitcoin.com.br/cadastro?mgm_token=f21092a305fb3af45259e8d7e648b2c15ea7272d863f6cb19bbd67ffdcc151ee&utm_campaign=mgm&utm_source=link-copy&utm_medium=web" target="_blank" class="register-link">Cadastrar em MB</a>
+                
+                    </div>
             </div>
         </section>
         

@@ -1,4 +1,4 @@
-/* Estilos Globais */
+/* Estilos Globais 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Cabeçalho */
+/* Cabeçalho 
 header {
     background-color: #220044;
     background-image: url('img/vazio.jpg');
@@ -31,7 +31,12 @@ header h1 {
     transform-origin: center;
 }
 
-/* Navegação */
+
+
+
+
+
+/* Navegação 
 nav {
     text-align: center;
 }
@@ -59,7 +64,98 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #56039b;
     transform: scale(1.1);
+}*/
+
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte para o site */
+    margin: 0;
+    padding: 0;
+    background: #110022; /* Define o fundo da página */
+    color: #ffffff; /* Define a cor do texto */
+    box-sizing: border-box;
 }
+
+/*Estilo Header*/
+
+.header {
+    background-image: url('img/vazio.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Cobre toda a área do cabeçalho */
+    background-position: center; /* Centraliza a imagem de fundo */
+    height: 100%;
+    width: 80%;
+    color: white;
+    padding: 10%;
+    padding-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fundo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 60%;
+    padding: 30px;
+    border: solid 3px black;
+    border-radius: 1%;
+    background-color: rgba(0, 0, 0, 0.66);
+    font-size: 20px;
+}
+
+/*Estilo botões*/
+
+.fundo-button {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.66);
+}
+
+.button {
+    padding: 5px;
+    display: flex;
+    width: 40%;
+    height: 10%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30%;
+}
+
+.button a {
+    text-decoration: none;
+    color: white;
+}
+
+.button-edit {
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#button-inicio:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+#button-mineradoras:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+#button-bancos:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+#button-script:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+
+
+
+
 
 /* Link de registro */
 a.register-link {
@@ -72,10 +168,11 @@ a.register-link {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-
 a.register-link:hover {
     background-color: #7B68EE;
 }
+
+
 
 /* Seções Principais */
 main {
@@ -94,13 +191,22 @@ section.content {
     display: block;
 }
 
+
+
+.content-edit{
+    text-decoration: underline;
+}
+
+
+
+
+
 /* Preços das Criptomoedas */
 .price-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 .crypto-price {
     background-color: #170124;
     border: 2px solid;
@@ -113,22 +219,24 @@ section.content {
     overflow: hidden;
     cursor: pointer;
 }
-
 .crypto-icon {
     width: 50px;
 }
-
 .crypto-price h3 {
     margin: 0;
     font-size: 20px;
     color: #f7f2f2;
 }
-
 .crypto-price p {
     margin: 0;
     font-size: 30px;
     color: #ffffff;
 }
+
+
+
+
+
 
 /* Cartões de Informações */
 .card {
@@ -204,7 +312,6 @@ section.content {
         transform: translate(0, -50%);
     }
 }
-
 @keyframes LinhasRGB {
     0% {
         border-color: #3b0147;
@@ -221,60 +328,53 @@ section.content {
     100% {
         border-color: #3b0147;
     }
-}
-
+}   
 .card h2, .card h3 {
     margin-top: 0;
     color: #fff;
 }
-
 .card h2 {
     font-size: 2vw;
 }
-
 .card h3 {
     font-size: 1.5vw;
 }
-
 .card p, .card ol {
     margin-bottom: 2vw;
     line-height: 1.6;
 }
-
 .card ol {
     padding-left: 2%;
 }
-
 .card + .card {
     margin-top: 2vw;
 }
 
 
-/* Centralizando o cardgf */
-.cardgf {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#crypto-chart-card {
+    display: block;
     margin: auto;
-    background-color: #1a1a1a;
-    border: 2px solid #6600cc;
-    border-radius: 2vw;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-    padding: 2%;
-    max-width: 70%; /* Ajustado para 50% da largura da tela */
-    width: 1500px; /* Defina a largura máxima conforme necessário */
-    text-align: center;
+    width: 50%;
+    height: 10%;
+    max-height: 600px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #000000;
+    position: relative;
+}
+#crypto-chart {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 80%;
+}
+#chart {
+    width: 100%;
+    height: 500px;
 }
 
-#crypto-chart-container {
-    margin-top: 20px; /* Adicionando espaço acima do gráfico */
-}
 
-#myChart {
-    width: 100% !important;
-    height: auto !important;
-}
 
 
 
@@ -289,6 +389,7 @@ section.content {
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }
+
 
 /* Botões de Mídia Social */
 .tiktok-button, .youtube-button {
@@ -332,6 +433,10 @@ section.content {
     transform: scale(1.1);
 }
 
+
+
+
+
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
     header {
@@ -360,10 +465,6 @@ section.content {
     .crypto-price {
         width: 100%;
     }
-
-    .smallcard {
-        width: 100%;
-    }
 }
 
 @media (min-width: 769px) {
@@ -380,10 +481,12 @@ section.content {
     }
 
     .crypto-price {
-        width: 23%;
+        width:    23%;
     }
+    
+    
 
-    .smallcard {
-        width: 43%;
-    }
 }
+
+
+
