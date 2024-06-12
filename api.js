@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchCryptoPrices();
     fetchHistoricalData();
@@ -22,15 +23,20 @@ async function fetchCryptoPrices() {
         const ltcPriceBrl = (parseFloat(ltc.priceUsd) * usdToBrlRate).toFixed(2);
         const ethPriceBrl = (parseFloat(eth.priceUsd) * usdToBrlRate).toFixed(2);
 
+        // Formata os preços em BRL
+        const formattedBtcPriceBrl = `R$ ${parseFloat(btcPriceBrl).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        const formattedLtcPriceBrl = `R$ ${parseFloat(ltcPriceBrl).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        const formattedEthPriceBrl = `R$ ${parseFloat(ethPriceBrl).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
         // Exibe os preços em BRL
-        document.getElementById('btc-price-brl').textContent = btcPriceBrl;
-        document.getElementById('ltc-price-brl').textContent = ltcPriceBrl;
-        document.getElementById('eth-price-brl').textContent = ethPriceBrl;
+        document.getElementById('btc-price-brl').textContent = formattedBtcPriceBrl;
+        document.getElementById('ltc-price-brl').textContent = formattedLtcPriceBrl;
+        document.getElementById('eth-price-brl').textContent = formattedEthPriceBrl;
 
         const prices = {
-            BTC: btcPriceBrl,
-            LTC: ltcPriceBrl,
-            ETH: ethPriceBrl
+            BTC: formattedBtcPriceBrl,
+            LTC: formattedLtcPriceBrl,
+            ETH: formattedEthPriceBrl
         };
 
         renderChart(prices);
@@ -38,6 +44,7 @@ async function fetchCryptoPrices() {
         console.error('Erro ao buscar preços das criptomoedas:', error);
     }
 }
+
 
 
 
