@@ -162,27 +162,14 @@ body {
 
 h1 {
     margin: 0;
-    height: 12vmin;
-    width: 120vmin;
+    height: 80px;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
   }
   
-  h1::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: -26vmin;
-    left: 29vmin;
-    width: 62vmin;
-    height: 62vmin;
-    border-radius: 50%;
-    border: 1.3vmin solid currentColor;
-    box-sizing: border-box;
-  }
   
   em {
     font-family: 'Josefin Sans', sans-serif;
@@ -211,13 +198,13 @@ h1 {
   }
   
   em.planet.left {
-    -webkit-transform-origin: 200% 5%;
-    transform-origin: 200% 5%;
+    -webkit-transform-origin: 200% 20%;
+    transform-origin: 200% 50%;
   }
   
   em.planet.right {
-    -webkit-transform-origin: -100% 5%;
-    transform-origin: -100% 1%;
+    -webkit-transform-origin: 200% 5%;
+    transform-origin: -100% 10%;
   }
   
   @-webkit-keyframes planet-rotate {
