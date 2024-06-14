@@ -102,7 +102,14 @@ body {
     border-radius: 1%;
     background-color: rgba(0, 0, 0, 0.66);
     font-size: 20px;
+    animation: LinhasRGB 3s infinite;
+    /*Listrado*/
+    background-image: -webkit-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: -moz-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: -o-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
 }
+
 
 
 /*Estilo botões*/
@@ -153,7 +160,77 @@ body {
     box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
 }
 
-
+h1 {
+    margin: 0;
+    height: 12vmin;
+    width: 120vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  h1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -26vmin;
+    left: 29vmin;
+    width: 62vmin;
+    height: 62vmin;
+    border-radius: 50%;
+    border: 1.3vmin solid currentColor;
+    box-sizing: border-box;
+  }
+  
+  em {
+    font-family: 'Josefin Sans', sans-serif;
+    color: currentColor;
+    font-size: 120%;
+    position: relative;
+    font-style: normal;
+    width: 15%;
+    text-align: center;
+  }
+  
+  em.planet {
+    -webkit-animation: planet-rotate 5s linear infinite;
+    animation: planet-rotate 5s linear infinite;
+    position: relative;
+  }
+  
+  em.planet::before {
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: 5%;
+    z-index: -1;
+    border-radius: 50%;
+    background: black;
+  }
+  
+  em.planet.left {
+    -webkit-transform-origin: 200% 5%;
+    transform-origin: 200% 5%;
+  }
+  
+  em.planet.right {
+    -webkit-transform-origin: -100% 5%;
+    transform-origin: -100% 1%;
+  }
+  
+  @-webkit-keyframes planet-rotate {
+    to {
+      -webkit-transform: rotate(1turn);
+    }
+  }
+  
+  @keyframes planet-rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
 
 
 
@@ -309,33 +386,7 @@ h2, h3 {
 
 
 
-@keyframes movePoint {
-    0% {
-        top: 0;
-        left: 0;
-        transform: translate(0, -50%);
-    }
-    25% {
-        top: 0;
-        left: 100%;
-        transform: translate(-50%, -50%);
-    }
-    50% {
-        top: 100%;
-        left: 100%;
-        transform: translate(-50%, -50%);
-    }
-    75% {
-        top: 100%;
-        left: 0;
-        transform: translate(-50%, -50%);
-    }
-    100% {
-        top: 0;
-        left: 0;
-        transform: translate(0, -50%);
-    }
-}
+
 @keyframes LinhasRGB {
     0% {
         border-color: #3b0147;
