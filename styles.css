@@ -104,6 +104,7 @@ body {
     font-size: 20px;
 }
 
+
 /*Estilo botões*/
 
 .fundo-button {
@@ -168,7 +169,8 @@ a.register-link {
     transition: background-color 0.3s ease;
 }
 a.register-link:hover {
-    background-color: #7B68EE;
+    background-color: #e250ff;
+    box-shadow: 0 0 5px #7b18d8, 0 0 10px #7b18d8
 }
 
 .register-button{
