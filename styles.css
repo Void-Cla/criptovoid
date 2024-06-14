@@ -192,13 +192,9 @@ section.content {
 }
 
 
-
-.content-edit{
-    text-decoration: underline;
+h2, h3 {
+    text-align: center;
 }
-
-
-
 
 
 /* Preços das Criptomoedas */
@@ -250,21 +246,12 @@ section.content {
     animation: LinhasRGB 3s linear infinite;
 }
 
-.card::before {
-    content: '';
-    width: 3px; /* Metade do tamanho original */
-    height: 3px; /* Metade do tamanho original */
-    background-color: #8c00ff;
-    border-radius: 40%;
-    position: absolute;
-    animation: movePoint 10s linear infinite;
-    box-shadow: 0 0 5px rgb(221, 209, 236); /* Adicionando sombra */
-}
+
 
 .smallcard {
     background-color: #1a1a1a;
-    border: 0.2vw solid #6600cc; /* Um quarto do tamanho original */
-    border-radius: 0.2vw; /* Um quarto do tamanho original */
+    border: 2px solid #6600cc; /* Um quarto do tamanho original */
+    border-radius: 10vw /* Um quarto do tamanho original */
     box-shadow: 1 2px 5px rgba(0, 0, 0, 0.8); /* Um quarto do tamanho original */
     padding: 3%; /* Um quarto do tamanho original */
     margin-bottom: 1vw; /* Um quarto do tamanho original */
@@ -274,16 +261,41 @@ section.content {
     display: inline-block; /* Para alinhar os cards lado a lado */
 }
 
-.smallcard::before {
-    content: '';
-    width: 3px; /* Um quarto do tamanho original */
-    height: 3px; /* Um quarto do tamanho original */
-    background-color: #8c00ff;
-    border-radius: 60%;
-    position: absolute;
-    animation: movePoint 10s linear infinite;
-    box-shadow: 4 4 4px rgb(221, 209, 236); /* Um quarto do tamanho original */
+.card-min {
+    background-color: #1a1a1a;
+    border: 2px solid #6600cc;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    padding: 2%;
+    margin-bottom: 2vw;
+    animation: LinhasRGB 3s linear infinite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
+
+.smallcard-min {
+    background-color: #1a1a1a;
+    border: 2px solid #6600cc; /* Um quarto do tamanho original */
+    border-radius: 5px;
+    box-shadow: 1 2px 5px rgba(0, 0, 0, 0.8); /* Um quarto do tamanho original */
+    padding: 3%; /* Um quarto do tamanho original */
+    margin-bottom: 1vw; /* Um quarto do tamanho original */
+    width: 43%; /* Para permitir 2 cards por linha com espaçamento */
+    animation: LinhasRGB 3s linear infinite;
+    font-size: ;
+}
+
+.card-min h2 {
+    width: 100%;
+    padding: 10px;
+    font-size: 40px;
+}
+
+
+
+
 
 @keyframes movePoint {
     0% {
@@ -344,10 +356,14 @@ section.content {
     line-height: 1.6;
 }
 .card ol {
-    padding-left: 2%;
+    padding-left: 7%;
 }
-.card + .card {
-    margin-top: 2vw;
+
+.smallcard-min a {
+    display: flex;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 30%;
 }
 
 
