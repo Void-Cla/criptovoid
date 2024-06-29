@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchCryptoPrices();
     fetchHistoricalData();
@@ -22,6 +23,7 @@ async function fetchCryptoPrices() {
         const ltcPriceBrl = (parseFloat(ltc.priceUsd) * usdToBrlRate).toFixed(2);
         const ethPriceBrl = (parseFloat(eth.priceUsd) * usdToBrlRate).toFixed(2);
 
+<<<<<<< HEAD
         // Exibe os preços em BRL
         document.getElementById('btc-price-brl').textContent = btcPriceBrl;
         document.getElementById('ltc-price-brl').textContent = ltcPriceBrl;
@@ -31,6 +33,22 @@ async function fetchCryptoPrices() {
             BTC: btcPriceBrl,
             LTC: ltcPriceBrl,
             ETH: ethPriceBrl
+=======
+        // Formata os preços em BRL
+        const formattedBtcPriceBrl = `R$ ${parseFloat(btcPriceBrl).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        const formattedLtcPriceBrl = `R$ ${parseFloat(ltcPriceBrl).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        const formattedEthPriceBrl = `R$ ${parseFloat(ethPriceBrl).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+        // Exibe os preços em BRL
+        document.getElementById('btc-price-brl').textContent = formattedBtcPriceBrl;
+        document.getElementById('ltc-price-brl').textContent = formattedLtcPriceBrl;
+        document.getElementById('eth-price-brl').textContent = formattedEthPriceBrl;
+
+        const prices = {
+            BTC: formattedBtcPriceBrl,
+            LTC: formattedLtcPriceBrl,
+            ETH: formattedEthPriceBrl
+>>>>>>> 1c2b00dfbcaaabf6d78dd4512b4b64d31155bf4e
         };
 
         renderChart(prices);
@@ -41,6 +59,10 @@ async function fetchCryptoPrices() {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c2b00dfbcaaabf6d78dd4512b4b64d31155bf4e
 //    Logica para o grafico + API key
 // async function fetchHistoricalData() {
 //     const cryptocurrencies = ['BTC', 'LTC', 'ETH'];
