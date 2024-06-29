@@ -1,10 +1,5 @@
 {
   "dependencies": {
-    "chart.js": "^4.4.3",
-    "jsdom": "^24.1.0",
-    "node-fetch": "^3.3.2"
-  },
-  "devDependencies": {
-    "fetch-mock": "^10.0.7"
+    "chart.js": "^4.4.3"
   }
 }
