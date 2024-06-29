@@ -152,6 +152,10 @@ body {
     box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
 }
 
+#button-Mega:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
 
 
 
@@ -171,7 +175,6 @@ a.register-link {
 a.register-link:hover {
     background-color: #7B68EE;
 }
-
 
 
 /* Seções Principais */

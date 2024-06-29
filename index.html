@@ -34,6 +34,7 @@
                 <a href="#mineradoras" class="nav-link"><div class="button-edit"  id="button-mineradoras">Mineradoras</div></a>
                 <a href="#bancos" class="nav-link"> <div class="button-edit"  id="button-bancos">Bancos</div></a>
                 <a href="#script" class="nav-link"> <div class="button-edit"  id="button-script">Script</div></a>
+                <a href="#Mega" class="nav-link"> <div class="button-edit"  id="button-Mega">Mega</div></a>
             </div>
          </div>
     </nav>
@@ -47,19 +48,19 @@
                 <div class="crypto-price" id="btc" data-crypto="BTC">
                     <img src="img/btc.png" alt="Ícone do Bitcoin (BTC)" class="crypto-icon">
                     <h3>Bitcoin (BTC)</h3>
-                    <p>$ <span id="btc-price-usd">Carregando...</span></p>
+                    <p>$ <span id="btc-price-brl">Carregando...</span></p>
                     
                 </div>
                 <div class="crypto-price" id="ltc" data-crypto="LTC">
                     <img src="img/ltc.png" alt="Ícone do Litecoin (LTC)" class="crypto-icon">
                     <h3>Litecoin (LTC)</h3>
-                    <p>$ <span id="ltc-price-usd">Carregando...</span></p>
+                    <p>$ <span id="ltc-price-brl">Carregando...</span></p>
                     
                 </div>
                 <div class="crypto-price" id="eth" data-crypto="ETH">
                     <img src="img/ether.png" alt="Ícone do Ethereum (ETH)" class="crypto-icon">
                     <h3>Ethereum (ETH)</h3>
-                    <p>$ <span id="eth-price-usd">Carregando...</span></p>
+                    <p>$ <span id="eth-price-brl">Carregando...</span></p>
                     
                 </div>
             </div>
@@ -209,6 +210,14 @@
                 
             </div>
         </section>
+
+        <section id="Mega" class="content">
+            <div class="card">
+                <h2>Mega Sena Única</h2>
+                <button id="gerarJogo">Gerar Mega Sena Única</button>
+                <ul id="resultado"></ul>
+            </div>
+        </section>
     </main>
 
     <footer id="footer">
@@ -222,8 +231,10 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script src="MegaS.js"></script>
     <script src="api.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
 
 
 

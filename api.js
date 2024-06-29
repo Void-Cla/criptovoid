@@ -5,20 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchCryptoPrices() {
     try {
+        // Busca os preços das criptomoedas
         const response = await fetch('https://api.coincap.io/v2/assets');
         const data = await response.json();
         const btc = data.data.find(crypto => crypto.symbol === 'BTC');
         const ltc = data.data.find(crypto => crypto.symbol === 'LTC');
         const eth = data.data.find(crypto => crypto.symbol === 'ETH');
 
-        document.getElementById('btc-price-usd').textContent = parseFloat(btc.priceUsd).toFixed(2);
-        document.getElementById('ltc-price-usd').textContent = parseFloat(ltc.priceUsd).toFixed(2);
-        document.getElementById('eth-price-usd').textContent = parseFloat(eth.priceUsd).toFixed(2);
+        // Busca a taxa de câmbio de USD para BRL
+        const exchangeRateResponse = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const exchangeRateData = await exchangeRateResponse.json();
+        const usdToBrlRate = exchangeRateData.rates.BRL;
+
+        // Converte os preços para BRL
+        const btcPriceBrl = (parseFloat(btc.priceUsd) * usdToBrlRate).toFixed(2);
+        const ltcPriceBrl = (parseFloat(ltc.priceUsd) * usdToBrlRate).toFixed(2);
+        const ethPriceBrl = (parseFloat(eth.priceUsd) * usdToBrlRate).toFixed(2);
+
+        // Exibe os preços em BRL
+        document.getElementById('btc-price-brl').textContent = btcPriceBrl;
+        document.getElementById('ltc-price-brl').textContent = ltcPriceBrl;
+        document.getElementById('eth-price-brl').textContent = ethPriceBrl;
 
         const prices = {
-            BTC: btc.priceUsd,
-            LTC: ltc.priceUsd,
-            ETH: eth.priceUsd
+            BTC: btcPriceBrl,
+            LTC: ltcPriceBrl,
+            ETH: ethPriceBrl
         };
 
         renderChart(prices);
@@ -28,32 +40,33 @@ async function fetchCryptoPrices() {
 }
 
 
+
 //    Logica para o grafico + API key
-async function fetchHistoricalData() {
-    const cryptocurrencies = ['BTC', 'LTC', 'ETH'];
-    const currentDate = new Date().toISOString().split('T')[0];
-    const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+// async function fetchHistoricalData() {
+//     const cryptocurrencies = ['BTC', 'LTC', 'ETH'];
+//     const currentDate = new Date().toISOString().split('T')[0];
+//     const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
 
-    for (const crypto of cryptocurrencies) {
-        try {
-            const response = await fetch(`https://api.coinapi.io/v1/ohlcv/${crypto}_USD/history?period_id=1H&time_start=${twentyFourHoursAgo}&time_end=${currentDate}&limit=24`, {
-                headers: {
-                    'X-CoinAPI-Key': 'D46C0C08-761B-4116-9B68-85AAB1810102' 
-                }
-            });
-            const data = await response.json();
+//     for (const crypto of cryptocurrencies) {
+//         try {
+//             const response = await fetch(`https://api.coinapi.io/v1/ohlcv/${crypto}_USD/history?period_id=1H&time_start=${twentyFourHoursAgo}&time_end=${currentDate}&limit=24`, {
+//                 headers: {
+//                     'X-CoinAPI-Key': 'D46C0C08-761B-4116-9B68-85AAB1810102' 
+//                 }
+//             });
+//             const data = await response.json();
 
-            if (data.length > 0) {
-                const prices = data.map(entry => entry.price_close.toFixed(2));
-                renderChart({ [crypto]: prices });
-            } else {
-                console.error(`Erro ao buscar histórico de preços de ${crypto}: Dados não encontrados`);
-            }
-        } catch (error) {
-            console.error(`Erro ao buscar histórico de preços de ${crypto}:`, error);
-        }
-    }
-}
+//             if (data.length > 0) {
+//                 const prices = data.map(entry => entry.price_close.toFixed(2));
+//                 renderChart({ [crypto]: prices });
+//             } else {
+//                 console.error(`Erro ao buscar histórico de preços de ${crypto}: Dados não encontrados`);
+//             }
+//         } catch (error) {
+//             console.error(`Erro ao buscar histórico de preços de ${crypto}:`, error);
+//         }
+//     }
+// }
 
 // function renderChart(prices) {
 //     const cryptocurrencies = Object.keys(prices);
