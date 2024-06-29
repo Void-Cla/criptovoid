@@ -1,10 +1,10 @@
-// Caminho para o seu arquivo JSON local
-const urldata = 'C:\\ProjetoVoid\\voidcriptoLOCALHOST\\data.json';
+// Caminho para o arquivo JSON no GitHub
+const jsonUrl = 'https://raw.githubusercontent.com/Void-Cla/criptovoid/main/data.json';
 
 // Função para carregar o JSON com os resultados anteriores da Mega Sena
 const carregarResultadosAnteriores = async () => {
     try {
-        const response = await fetch(urldata); // Usando fetch para carregar localmente
+        const response = await fetch(jsonUrl); // Usando fetch para carregar o JSON do GitHub
         if (!response.ok) {
             throw new Error(`Erro ao carregar JSON. Status: ${response.status}`);
         }
