@@ -1,2 +1,0 @@
-# criptovoid
- Projeto
