@@ -1544,7 +1544,7 @@
     font-size: 1.7rem;
   }
 } 
-@media only screen and (max-width: 260px) {
+@media only screen and (max-width: 300px) {
   #depoiment {
     height: 150vh;
   }
