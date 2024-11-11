@@ -684,7 +684,7 @@
     #textoEscondido7.show,
     #textoEscondido8.show,
     #textoEscondido9.show {
-        max-height: 20%;
+        max-height: 30%;
         border-bottom: 1px solid #00000022;
         padding-bottom: 10px;
     }
@@ -1145,7 +1145,6 @@
 
       #qa-container {
         height: 120vh;
-        border: 1px solid red;
       }
 
       #contact {
@@ -1335,15 +1334,21 @@
       height: 150vh;
   }
 
-  .about2-container {
+  .about2-container1 {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       width: 100%;
   }
 
   .about2-chd2 {
-      height: 40vh;
+      height: 50vh;
+      justify-content: space-between;
+  }
+
+  .about2-container2 {
+    justify-content: space-around;
   }
 
   .about2-chd3 {
@@ -1360,13 +1365,12 @@
   }
 
   .about2-chd1 img {
-      border: 1px solid red;
       height: 40vh;
     }
 
     .about-content-chd2 {
       justify-content: space-around;
-      height: 60vh;
+      height: 90vh;
     }
 
     .about2-chd2 {
@@ -1378,7 +1382,7 @@
     }
 
   .about2-chd4 img {
-      height: 20vh;
+      height: 25vh;
     }
 
     .box1 p {
@@ -1386,7 +1390,8 @@
     }
 
     .float-div4 h3 {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      margin-top: 15px;
     }
 
     .depoiment-container {
@@ -1423,6 +1428,10 @@
       width: 80%;
     }
 
+    #qa-container {
+      height: 120vh;
+    }
+
     #contact h3 {
       width: 100%;
     }
@@ -1432,7 +1441,8 @@
     }
     
     #contact img {
-      height: 50vh;
+      height: 80vh;
+
     }
 
     .float-register {
