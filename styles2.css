@@ -1200,7 +1200,7 @@
         animation-iteration-count: 1;
       }
 } 
-@media (max-width: 425px) { 
+@media only screen and (max-width: 425px) { 
 
   header {
       height: 80vh;
@@ -1480,7 +1480,7 @@
       animation-iteration-count: 1;
     }
 } 
-@media (max-width: 375px) { 
+@media only screen and (max-width: 375px) { 
 
   .description2 h2 {
     font-size: .6rem
@@ -1545,7 +1545,7 @@
     font-size: 1.7rem;
   }
 } 
-@media (max-width: 300px) {
+@media only screen and (max-width: 300px) {
   #depoiment {
     height: 150vh;
   }
