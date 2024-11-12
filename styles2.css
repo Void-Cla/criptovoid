@@ -17,7 +17,7 @@
 
     header {
         width: 100%;
-        height: 110vh;
+        height: 100vh;
         background-color: lightgreen;
         display: flex;
         flex-direction: column;
@@ -791,766 +791,131 @@
       }
 }
 
-@media only screen and (max-width: 1440px) {
-    .header-content1 {
-        width: 100%;
-        font-size: 2.3rem;
-    }
-
-    .description1 p {
-        font-size: 2rem;
-    }
-
-    .header-content-child img{
-        height: 80vh;
-    }
-
-    .course-container2 h2 {
-        font-size: 4rem;
-    }
-
-    .course-container2 p {
-        font-size: 1.3rem;
-    }
-
-    .about-child1 h2{
-        font-size: 4rem;
-    }
-
-    .about-child2 p {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    .about-child3 ul{ 
-        font-size: 1.2rem;
-    }
-
-    .about2-chd2 {
-        width: 60%;
-    }
-
-    .about2-chd2 h2 {
-        font-size: 3rem;
-    }
-
-    .about2-chd2 p {
-        font-size: 1.5rem;
-    }
-
-    .about2-chd3 h3 {
-        font-size: 4rem;
-    }
-
-    .about2-chd3 p {
-        font-size: 1.2rem ;
-    }
-
-    .card-container {
-        height: 15vh;
-    }
-
-    .card-location-content {
-        height: 35vh;
-    }
-
-    #qa-container {
-        height: 100vh;
-        display: flex;
-    }
-
-    .float-register {
-        left: 50%
-    }
-
-    @keyframes slide-in {
-        from {
-          transform: translateX(-5.5%);
-          opacity: 0.25;
-        }
-        to {
-          transform: translateX(0%);
-          opacity: 1;
-        }
-      }
-  
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-  
-      .animate-slide-in {
-        animation: slide-in 1500ms;
-        animation-iteration-count: 1;
-      }
-  
-      .animate-fade-in {
-        animation: fade-in 1500ms;
-        animation-iteration-count: 1;
-      }
-}
-
-@media only screen and (max-width: 1000px) { 
-
-    header {
-        height: 80vh;
-    }
-
-    #header-container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .header-content1 {
-        font-size: 1.4rem;
-        width: 100%;
-    }
-
-    .header-content-child {
-        width: 150%;
-        justify-content: space-around;
-    }
-
-    .description1 p {
-        font-size: 1.1rem;
-        text-align: center;
-    }
-
-    .header-content-child img {
-        height: 50vh;
-    }
-
-    .description2 h2 {
-        font-size: .9rem
-    }
-
-    #course {
-        display: flex;
-        flex-direction: column;
-        height: 90vh;
-        width: 100%;
-    }
-
-    .course-container1 {
-        height: 40vh;
-    }
-
-    .course-container1 img {
-        height: 25vh;
-    }
-
-    .course-container2 {
-        justify-content: center;
-        height: 100%;
-    }
-
-    .course-container2 h2 {
-        font-size: 3rem;
-        padding: 0 20px 20px 0;
-    }
-
-    .course-container2 p {
-        font-size: 1.2rem;
-        padding: 0 20px 20px 0;
-    }
-
-    .register {
-        padding: 10px;
-        margin-left: -5%;
-    }
-
-    #about {
-        height: 170vh;
-    }
-
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-    }
-
-    .about-content {
-        width: 100%;
-        height: 75vh;
-    }
-
-    .about-child1 {
-      height: 80%;
-    }
-
-    .about-child2 {
-      height: 100%;
-    }
-
-    .about-content2 {
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        height: 80vh;
-        width: 90%;
-    }
-
-    .about-child3 {
-        height: 40vh;
-    }
-
-    .about-child3 ul {
-        width: 80%;
-        font-size: .8rem;
-    }
-
-    .about-child4 img {
-        height: 45vh;
-    }
-
-    .float-div2 p {
-        font-size: 1.5rem;
-    }
-
-    #about2 {
-      height: 130vh;
-      justify-content: center;
-    }
-
-    .about2-container1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 40%;
-        width: 100%;
-    }
-    .about2-container2 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 60%;
-        width: 100%;
-    }
-
-    .about2-chd2 {
-        height: 80%;
-    }
-
-    .about2-chd3 {
-        width: 100%;
-    }
-
-    .about2-chd3 p {
-        width: 100%;
-        font-size: 1.2rem;
-    }
-
-    .about2-chd1 {
-        width: 80%;
-    }
-
-    /* .about2-chd1 img {
-        border: 1px solid red;
-        height: 40vh;
-      } */
-
-      .about2-chd1{
-        display: none;
-      }
-
-      .about-content-chd2 {
-        justify-content: space-between;
-        height: 100%;
-      }
-
-      .about2-chd2 {
-        align-items: center;
-        justify-content: space-around;
-        height: 100%;
-        width: 100%;
-      }
-
-      .about2-chd2 h2{
-        font-size: 2.1rem;
-      }
-
-      .about2-chd2 p {
-        font-size: 1.2rem;
-        width: 80%;
-      }
-
-      .about2-chd3 {
-        height: 100%;
-      }
-
-      .about2-chd3 h3 {
-        font-size: 3rem;
-      }
-
-      .about2-chd3 p {
-        width: 80%;
-        font-size: 1.1rem;
-      }
-
-      .about2-chd4 {
-        height: 70%;
-        display: flex;
-        align-items: center;
-      }
-
-    .about2-chd4 img {
-        height: 25vh;
-      }
-
-      .float-div4 h3 {
-        font-size: 1.9rem;
-        margin: 10px 0 0 0;
-      }
-
-      .depoiment-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100vh;
-      }
-
-      .card-container {
-        height: 30vh;
-      }
-
-      .depoiment-container-ch1 {
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .depoiment-container-ch2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        height: 50vh;
-      }
-
-      .title-location {
-        margin-top: 30px;
-        width: 100%;
-      }
-
-      .card-location-content {
-        width: 80%;
-      }
-
-      #qa-container {
-        height: 120vh;
-      }
-
-      #contact {
-        height: 120vh;
-      }
-
-      #contact h3 {
-        width: 100%;
-      }
-
-      .image-container {
-        width: 100%;
-      }
-      
-      #contact img {
-        height: 80vh;
-        align-items: start;
-      }
-
-      .float-register {
-        width: 50%;
-        left: 40%;
-      }
-
-      @keyframes slide-in {
-        from {
-          transform: translateX(-5.5%);
-          opacity: 0.25;
-        }
-        to {
-          transform: translateX(0%);
-          opacity: 1;
-        }
-      }
-  
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-  
-      .animate-slide-in {
-        animation: slide-in 1500ms;
-        animation-iteration-count: 1;
-      }
-  
-      .animate-fade-in {
-        animation: fade-in 1500ms;
-        animation-iteration-count: 1;
-      }
-} 
-@media only screen and (max-width: 425px) { 
+@media only screen and (max-width: 450px) {
 
   header {
-      height: 80vh;
+    height: 90vh;
   }
 
   #header-container {
-      width: 90%;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
   .header-content1 {
-      font-size: 1.2rem;
-      width: 100%;
+    width: 100%;
+    margin-top: 60px;
   }
 
-  .header-content2 {
-    justify-content: end;
-  }
-
-  .header-content-child {
-      width: 150%;
-      justify-content: center;
+  .header-content1 h1 {
+    font-size: 2.1rem;
   }
 
   .description1 {
-    width: 100%;
-  }
-
-  .description1 p {
     margin-top: 80px;
+  }
+
+  .description1 p{
+    font-size: 1.3rem;
+  }
+
+  .description2 p{
+    font-size: .9rem;
+    color: #ff5757;
+    font-weight: bold;
+    text-shadow: none;
+  }
+  .description2 h2{
     font-size: 1rem;
-    text-align: center;
-  }
-
-  .header-content-child img {
-    height: 50vh;
-    margin-left: 50px;
-  }
-
-  .description2 h2 {
-    font-size: .7rem
+    color: #ff5757;
+    text-shadow: none;
   }
 
   #course {
     display: flex;
     flex-direction: column;
-    height: 90vh;
-    width: 100%;
+    height: 80vh;
   }
 
   .course-container1 {
-    height: 40vh;
+    display: flex;
+    width: 100%;
   }
 
   .course-container1 img {
-    height: 25vh;
+    height: 30vh;
+    align-self: center;
   }
 
   .course-container2 {
-    align-items: center;
-    height: 100%;
-    width: 90%;
-  }
-
-  .course-container2 h2 {
-      font-size: 3rem;
-      padding: 0 20px 20px 0;
+    height: 150%;
+    width: 100%;
+    padding: 0;
   }
 
   .course-container2 p {
-      font-size: 1.2rem;
-      padding: 0 20px 20px 0;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
   }
 
   .register {
-      padding: 10px;
-      margin-left: -5%;
+    margin-left: 0;
   }
 
   #about {
-      height: 180vh;
+    height: 180vh;
   }
-
   .about-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border: 1px solid red;
   }
 
   .about-content {
-      width: 100%;
-      height: 100%;
-  }
-
-  .about-content2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      width: 90%;
-  }
-
-  .about-child1 {
-    height: 40%;
-  }
-
-  .about-child1 h2{
-    font-size: 3.2rem;
-  }
-
-  .about-child3 {
-      height: 80%;
-  }
-
-  .about-child3 ul {
-      width: 80%;
-      font-size: .8rem;
-  }
-
-  .about-child4 img {
-      height: 45vh;
-  }
-
-  .float-div2 p {
-      font-size: 1.5rem;
-  }
-
-  #about2 {
-      height: 150vh;
-  }
-
-  .about2-container1 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-  }
-
-  .about2-chd2 {
-      height: 50vh;
-      justify-content: space-between;
-  }
-
-  .about2-container2 {
-    justify-content: space-around;
-  }
-
-  .about2-chd3 {
-      width: 100%;
-  }
-
-  .about2-chd3 p {
-      width: 100%;
-      font-size: 1.2rem;
-  }
-
-  .about2-chd1 {
-      width: 80%;
-  }
-
-  .about2-chd1 img {
-      height: 40vh;
-    }
-
-    .about-content-chd2 {
-      justify-content: space-around;
-      height: 90vh;
-    }
-
-    .about2-chd2 {
-      width: 100%;
-    }
-
-    .about2-chd2 h2{
-      font-size: 2.1rem;
-    }
-
-  .about2-chd4 img {
-      height: 25vh;
-    }
-
-    .box1 p {
-      font-size: .7rem;
-    }
-
-    .float-div4 h3 {
-      font-size: 1.8rem;
-      margin-top: 15px;
-    }
-
-    .depoiment-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-    }
-
-    .card-container {
-      height: 30vh;
-    }
-
-    .depoiment-container-ch1 {
-      height: 50vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .depoiment-container-ch2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      height: 50vh;
-    }
-
-    .title-location {
-      margin-top: 30px;
-      width: 100%;
-    }
-
-    .card-location-content {
-      width: 80%;
-    }
-
-    #qa-container {
-      height: 120vh;
-    }
-
-    #contact h3 {
-      width: 100%;
-    }
-
-    .image-container {
-      width: 100%;
-    }
-    
-    #contact img {
-      height: 80vh;
-
-    }
-
-    .float-register {
-      width: 60%;
-    }
-
-    @keyframes slide-in {
-      from {
-        transform: translateX(-5.5%);
-        opacity: 0.25;
-      }
-      to {
-        transform: translateX(0%);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .animate-slide-in {
-      animation: slide-in 1500ms;
-      animation-iteration-count: 1;
-    }
-
-    .animate-fade-in {
-      animation: fade-in 1500ms;
-      animation-iteration-count: 1;
-    }
-} 
-@media only screen and (max-width: 375px) { 
-
-  .description2 h2 {
-    font-size: .6rem
-  }
-
-  .description2 p {
-    color: #fff;
-    font-size: .8rem;
-    margin-top: 20px;
-  }
-
-  .course-container2 p {
-    font-size: 1.1rem;
-  }
-
-  #about {
-    height: 170vh;
-  }
-
-  .about-child1 h2{
-    font-size: 2.8rem;
-  }
-
-  .about-content {
-    height: 90vh;
-  }
-
-  .about-child2 p {
-    font-size: .9rem;
-  }
-
-  .about-content2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
-  .about-child4 img {
-    height: 40vh;
+  .about-child1 {
+    width: 80%;
+    height: 40%;
+    border: 1px solid red;
   }
 
-  .about2-chd2 h2 {
-    font-size: 1.9rem;
+  .about-child1  h2 {
+    font-size: 3.5rem;
   }
 
-  .about2-chd2 p {
-    font-size: 1.1rem;
-  }
-
-  .about2-chd3 p{
-    font-size: 1.1rem;
-  }
-
-  #depoiment {
-    height: 130vh;
-  }
-
-  .depoiment-container-ch1,
-  .depoiment-container-ch2 {
-    height: 60%;
-  }
-
-  .float-div4 h3{
-    font-size: 1.7rem;
-  }
-} 
-@media only screen and (max-width: 300px) {
-  #depoiment {
-    height: 150vh;
-  }
-
-  .depoiment-container {
+  .about-child2 {
     height: 100%;
+    margin-top: 20px;
+    border: 1px solid red;
   }
+
+  .about-child2 p{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  } 
+
+  .about-content2 {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    border: 1px solid red;
+  }
+
+  .about-child4 img {
+    transform: rotateY(180deg)
+  }
+  
 }
