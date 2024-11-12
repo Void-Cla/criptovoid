@@ -74,7 +74,7 @@
 
     .description2 p {
         color: #fff;
-        margin-top: 60px;
+        margin-top: 0px;
     }
 
     .description2 h2 {
@@ -459,6 +459,11 @@
        
       }
 
+      .depoiment-container-ch1,
+      .depoiment-container-ch2 {
+        width: 80%;
+      }
+
       .card-container {
         width: 80%;
         height: 25%;
@@ -798,37 +803,42 @@
   }
 
   #header-container {
-    width: 90%;
+    width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
   }
 
   .header-content1 {
-    width: 100%;
+    width: 105%;
     margin-top: 60px;
   }
 
+  .header-content2 {
+    width: 90%;
+  }
+
   .header-content1 h1 {
-    font-size: 2.1rem;
+    width: 100%;
+    font-size: 1.9rem;
   }
 
   .description1 {
-    margin-top: 80px;
+    margin-top:30px;
   }
 
   .description1 p{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .description2 p{
-    font-size: .9rem;
+    font-size: .7rem;
     color: #ff5757;
     font-weight: bold;
     text-shadow: none;
   }
   .description2 h2{
-    font-size: 1rem;
+    font-size: .8rem;
     color: #ff5757;
     text-shadow: none;
   }
@@ -836,7 +846,7 @@
   #course {
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 90vh;
   }
 
   .course-container1 {
@@ -865,14 +875,13 @@
   }
 
   #about {
-    height: 180vh;
+    height: 160vh;
   }
   .about-container {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    border: 1px solid red;
   }
 
   .about-content {
@@ -884,24 +893,26 @@
   }
 
   .about-child1 {
-    width: 80%;
+    width: 100%;
     height: 40%;
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
   }
 
   .about-child1  h2 {
-    font-size: 3.5rem;
+    border: 1px solid red;
+    width: 90%;
+    font-size: 2.8rem;
   }
 
   .about-child2 {
     height: 100%;
-    margin-top: 20px;
-    border: 1px solid red;
+    margin-top: 50px;
   }
 
   .about-child2 p{
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
   } 
 
   .about-content2 {
@@ -911,11 +922,135 @@
     align-items: center;
     width: 100%;
     height: 40%;
-    border: 1px solid red;
+  }
+
+  .about-child3 li {
+    font-size: .8rem;
+    margin-left: 20px;
   }
 
   .about-child4 img {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
+    height: 50vh;
   }
+
+  .float-div2 p {
+    font-size: 1.7rem;
+  }
+
+  .learning-container {
+    height: 60vh;
+  }
+
+  #about2 {
+    width: 100%;
+    height: 150vh;
+    display: flex;
+  }
+
+  .about2-container1 {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about2-chd2 {
+    width: 100%;
+    height: 40%;
+    justify-content: start;
+  }
+
+  .about2-chd1 {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .about2-chd1 img {
+    height: 43vh;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 95%);
+  }
+
+  .about2-chd1 p {
+    width: 40%;
+    margin-right: 10%;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .about2-container2 {
+    height: 50%;
+  }
+
+  .about2-chd3 h3 {
+    font-size: 3.2rem;
+  }
+
+  .about2-chd3 img{
+    height: 30vh;
+    margin-top: 50px;
+  }
+
+  .about2-chd4 {
+    width: 80%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .float-div4 h3 {
+    font-size: 2rem;
+  }
+
+  .depoiment-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .depoiment-container-ch1,
+  .depoiment-container-ch2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-container {
+    height: 13vh;
+  }
+
+  .card-location-content {
+    width: 80%;
+  }
+
+  #qa-container {
+    height: 130vh;
+  }
+
+    .qa-container-content {
+      display: flex;
+      justify-content: start;
+      margin-top: 60px;
+    }
+
+    #contact .contact-container {
+    }
+
+    #contact .contact-container h3{
+      text-align: start;
+      font-size: 3.1rem;
+    }
+
+    .image-container {
+      width: 100%;
+    }
+
+    .float-register {
+      width: 50%;
+    }
+
+    .float-register p{
+      font-size: 1.3rem;
+    }
   
 }
