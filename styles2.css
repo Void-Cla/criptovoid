@@ -1059,12 +1059,24 @@
 
 @media only screen and (max-width: 390px) {
 
+    #modified-content {
+      margin-left: 30px;
+    }
+
+    .description1 {
+      width: 100%;
+    }
+
     .header-content1 h1{
-      font-size: 1.7rem;
+      font-size: 1.6rem;
     }
 
     .description2 {
-      width: 120%;
+      width: 130%;
+    }
+
+    .description2 h2{
+      font-size: .6rem;
     }
 
     .course-container2 h2{
@@ -1072,7 +1084,7 @@
     }
 
     .course-container2 p{
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .register {
