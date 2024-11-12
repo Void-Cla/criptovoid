@@ -614,7 +614,6 @@
         justify-content: center;
         background: linear-gradient(180deg, #3ca26e 0%, #fff 100%);
         padding-bottom: 20px; /* Espaço para evitar sobreposição com os elementos abaixo */
-        box-sizing: border-box; /* Inclui o padding nos cálculos de tamanho */
     }
       /* .qa-content-container {
         width: 80%;
@@ -743,8 +742,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 40px; /* Distância entre o conteúdo de FAQ e o conteúdo de contato */
-        box-sizing: border-box;
+        padding-top: 20px; /* Distância entre o conteúdo de FAQ e o conteúdo de contato */
     }
       /* .contact-container {
         height: 100%;
@@ -761,7 +759,7 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        padding: 0 20px 0 0; /* Garante que o conteúdo tenha espaço interno */
+        padding: 0px; /* Garante que o conteúdo tenha espaço interno */
     }
       #contact h3 {
         font-family: "Antonio";
@@ -776,6 +774,7 @@
 
       .image-container {
         width: 50%;
+        height: 100vh;
         
       }
 
@@ -792,7 +791,7 @@
         left: 35%;
         bottom: 35%;
         border-radius: 15px;
-        border: none
+        border: none;
       }
 
       .float-register p{
