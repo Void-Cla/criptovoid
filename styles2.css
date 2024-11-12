@@ -608,6 +608,7 @@
       } */
 
       #qa-container {
+        overflow: hidden;
         width: 100%;
         min-height: 100vh; /* Garante altura mínima para o contêiner */
         display: flex;
@@ -654,7 +655,7 @@
     .qa-container-content {
       overflow: hidden;
       height: auto; /* Permite que o contêiner se expanda conforme necessário */
-      width: 80%;
+      width: 90%;
       display: flex;
       flex-direction: column;
       align-items: center;
