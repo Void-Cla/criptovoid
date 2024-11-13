@@ -805,7 +805,6 @@
 
   header {
     height: 90vh;
-    border: 1px solid red;
   }
 
   #header-container {
@@ -813,13 +812,11 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
   }
 
   .header-content1 {
     width: 100%;
     margin-top: 60px;
-    border: 1px solid red;
   }
 
   .header-content2 {
@@ -827,8 +824,9 @@
   }
 
   .header-content1 h1 {
-    width: 100%;
+    width: 95%;
     font-size: 1.9rem;
+    margin: 0 auto;
   }
 
   .description1 {
