@@ -1215,4 +1215,115 @@
     
 }
 
-@media only screen and (max-width: 330px)
+@media only screen and (max-width: 330px) {
+
+  .header-content1 h1 {
+    font-size: 1.4rem;
+  }
+
+  .description1 p{
+    font-size: .8rem;
+  }
+
+  .description2 {
+    margin-top: -40px;
+  }
+
+  .course-container2 h2{
+    font-size: 2.5rem
+  }
+
+  .course-container2 p {
+    font-size: .7rem;
+  }
+
+  .float-div {
+    bottom: 3%
+  }
+
+  .register {
+    padding: 10px;
+  }
+
+  .register a{
+    font-size: .5rem;
+  }
+
+  .about-child1 h2 {
+    font-size: 2.1rem;
+  }
+
+  .about-child2 p {
+    font-size: .6rem;
+    line-height: 1rem;
+  }
+
+  .about-child3 ul {
+    margin-bottom: 30px;
+  }
+  .about-child3 li {
+    font-size: .6rem;
+  }
+
+  .float-div2 p{
+    font-size: 1.5rem;
+    margin-top:20px
+  }
+
+  .box1 p{
+    font-size: .4rem
+  }
+
+  #about2 {
+    height: 160vh;
+  }
+
+  .about2-chd2 h2{
+    font-size: 1.2rem;
+  }
+
+  .about2-chd1 p{
+    font-size: .8rem;
+  }
+
+  .about2-chd3 h3{
+    font-size: 2.4rem;
+  }
+
+  .about2-chd4 p{
+    font-size: .7rem;
+  }
+
+  .float-div4 h3{
+    font-size: 1.5rem;
+  }
+
+  #depoiment {
+    height: 130vh;
+  }
+
+  .depoiment-container {
+    margin-top: 20px;
+  }
+
+  .card-depoiment-content2 p{
+    font-size: .4rem
+  }
+  .card-depoiment-content2 h4{
+    font-size: .7rem;
+  }
+
+  .card-depoiment-content2 button {
+    padding: 1px;
+    font-size: .6rem;
+  }
+
+  .title-location h2{
+    font-size: 2.5rem;
+  }
+
+  #contact .contact-container h3{
+    font-size: 2rem;
+    padding-left: 30px;
+  }
+}
