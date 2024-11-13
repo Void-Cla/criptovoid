@@ -1086,6 +1086,40 @@
   
 }
 
+@media only screen and (max-width: 414px) {
+
+  .description2 {
+    width: 110%;
+  }
+
+  #about2 {
+    height: 150vh;
+  }
+
+  .about2-container1 {
+    margin-bottom: 20px
+  }
+
+  .about2-chd1 p {
+    font-size: .9rem
+  }
+
+  .about2-chd3 h3{
+    font-size: 3rem;
+  }
+
+  .card-container h4{
+    font-size: .9rem;
+  }
+  .card-container p {
+    font-size: .6rem;
+  }
+
+  .card-location-content {
+    height: 35vh;
+  }
+}
+
 @media only screen and (max-width: 390px) {
 
     #modified-content {
@@ -1108,6 +1142,10 @@
       font-size: .6rem;
     }
 
+    #course {
+      height: 90vh;
+    }
+
     .course-container2 h2{
       font-size: 3rem;
     }
@@ -1121,6 +1159,10 @@
       font-size: .6rem;
     }
 
+    #about {
+      height: 145vh;
+    }
+
     .about-child1 h2 {
       font-size: 2.5rem;
     }
@@ -1129,6 +1171,14 @@
       font-size: .8rem;
       line-height: 1.4rem;
     } 
+
+    .box1 {
+      height: 8vh;
+    }
+
+    .box1 p {
+      font-size: .6rem
+    }
 
     .about2-chd2 h2{
       font-size: 1.8rem;
@@ -1158,5 +1208,11 @@
     .card-depoiment-content2 p {
       font-size: .5rem;
     }
+
+    #contact .contact-container h3 {
+      font-size: 2.5rem;
+    }
     
 }
+
+@media only screen and (max-width: 330px)
