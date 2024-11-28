@@ -1,0 +1,534 @@
+/* Estilos Globais 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #110022;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho 
+header {
+    background-color: #220044;
+    background-image: url('img/vazio.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 1% 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+    height: 30vh;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5vw;
+    position: relative;
+    top: 1%;
+    transform: translateY(-1%);
+    transform-origin: center;
+}
+
+
+
+
+
+
+/* Navegação 
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10%;
+    margin: -1%;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f8f5fc;
+    padding: 5% 5%;
+    border-radius: 5px;
+    animation: colorChange 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #56039b;
+    transform: scale(1.1);
+}*/
+
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte para o site */
+    margin: 0;
+    padding: 0;
+    background: #110022; /* Define o fundo da página */
+    color: #ffffff; /* Define a cor do texto */
+    box-sizing: border-box;
+}
+
+/*Estilo Header*/
+
+.header {
+    background-image: url('img/vazio.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Cobre toda a área do cabeçalho */
+    background-position: center; /* Centraliza a imagem de fundo */
+    height: 100%;
+    width: 80%;
+    color: white;
+    padding: 10%;
+    padding-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fundo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 60%;
+    padding: 30px;
+    border: solid 3px black;
+    border-radius: 1%;
+    background-color: rgba(0, 0, 0, 0.66);
+    font-size: 20px;
+    animation: LinhasRGB 3s infinite;
+    /*Listrado*/
+    background-image: -webkit-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: -moz-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: -o-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+}
+
+
+
+/*Estilo botões*/
+
+.fundo-button {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.66);
+}
+
+.button {
+    padding: 5px;
+    display: flex;
+    width: 40%;
+    height: 10%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30%;
+}
+
+.button a {
+    text-decoration: none;
+    color: white;
+}
+
+.button-edit {
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#button-inicio:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+#button-mineradoras:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+#button-bancos:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+#button-script:hover {
+    background-color: #ff00ea;
+    box-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea
+}
+
+h1 {
+    margin: 0;
+    height: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  
+  em {
+    font-family: 'Josefin Sans', sans-serif;
+    color: currentColor;
+    font-size: 120%;
+    position: relative;
+    font-style: normal;
+    width: 15%;
+    text-align: center;
+  }
+  
+  em.planet {
+    -webkit-animation: planet-rotate 5s linear infinite;
+    animation: planet-rotate 5s linear infinite;
+    position: relative;
+  }
+  
+  em.planet::before {
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: 5%;
+    z-index: -1;
+    border-radius: 50%;
+    background: black;
+  }
+  
+  em.planet.left {
+    -webkit-transform-origin: 200% 20%;
+    transform-origin: 200% 50%;
+  }
+  
+  em.planet.right {
+    -webkit-transform-origin: 200% 5%;
+    transform-origin: -100% 10%;
+  }
+  
+  @-webkit-keyframes planet-rotate {
+    to {
+      -webkit-transform: rotate(1turn);
+    }
+  }
+  
+  @keyframes planet-rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+
+
+
+/* Link de registro */
+a.register-link {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background-color: #6600cc;
+    padding: 1.2% 2%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+a.register-link:hover {
+    background-color: #e250ff;
+    box-shadow: 0 0 5px #7b18d8, 0 0 10px #7b18d8
+}
+
+.register-button{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* Seções Principais */
+main {
+    padding: 5%;
+}
+
+section.content {
+    margin-bottom: 3vw;
+}
+
+.content {
+    display: none;
+}
+
+#inicio.content {
+    display: block;
+}
+
+
+h2, h3 {
+    text-align: center;
+}
+
+
+/* Preços das Criptomoedas */
+.price-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.crypto-price {
+    background-color: #170124;
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 20px;
+    width: 10%;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+.crypto-icon {
+    width: 50px;
+}
+.crypto-price h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #f7f2f2;
+}
+.crypto-price p {
+    margin: 0;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+.card {
+    background-color: #1a1a1a;
+    border: 2px solid #6600cc;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    padding: 2%;
+    margin-bottom: 2vw;
+    animation: LinhasRGB 3s linear infinite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
+.smallcard {
+    background-color: #1a1a1a;
+    border: 2px solid #6600cc; /* Um quarto do tamanho original */
+    border-radius: 5px;
+    box-shadow: 1 2px 5px rgba(0, 0, 0, 0.8); /* Um quarto do tamanho original */
+    padding: 3%; /* Um quarto do tamanho original */
+    margin-bottom: 1vw; /* Um quarto do tamanho original */
+    width: 43%; /* Para permitir 2 cards por linha com espaçamento */
+    animation: LinhasRGB 3s linear infinite;
+    font-size: ;
+}
+
+.card h2 {
+    width: 100%;
+    padding: 10px;
+    font-size: 3vw;
+}
+
+.card h2, .card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.card h3 {
+    font-size: 1.5vw;
+}
+.card p, .card ol {
+    margin-bottom: 2%;
+    line-height: 1.6;
+}
+.card ol {
+    padding-left: 7%;
+}
+
+.smallcard-min a {
+    display: flex;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 30%;
+}
+
+#description {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+
+
+
+@keyframes LinhasRGB {
+    0% {
+        border-color: #3b0147;
+    }
+    25% {
+        border-color: #7b18d8;
+    }
+    50% {
+        border-color: #6b0d88;
+    }
+    75% {
+        border-color: #520585;
+    }
+    100% {
+        border-color: #3b0147;
+    }
+}   
+
+
+#crypto-chart-card {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 10%;
+    max-height: 600px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #000000;
+    position: relative;
+}
+#crypto-chart {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 80%;
+}
+#chart {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+
+
+/* Rodapé */
+#footer {
+    position: relative;
+    background-color: #450285d2;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+
+/* Botões de Mídia Social */
+.tiktok-button, .youtube-button {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.tiktok-button {
+    right: 60px;
+    background-color: #000;
+}
+
+.tiktok-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.tiktok-button:hover {
+    transform: scale(1.1);
+}
+
+.youtube-button {
+    right: 10px;
+    background-color: #FF0000;
+}
+
+.youtube-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.youtube-button:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 5%;
+    }
+
+    header h1 {
+        font-size: 7vw;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 2%;
+    }
+
+    nav ul li a {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2%;
+    }
+
+    .price-box {
+        flex-direction: column;
+    }
+
+    .crypto-price {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    header h1 {
+        font-size: 3.5vw;
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+
+    .price-box {
+        flex-direction: row;
+    }
+
+    .crypto-price {
+        width:    23%;
+    }
+    
+    
+
+}
+
+
+
